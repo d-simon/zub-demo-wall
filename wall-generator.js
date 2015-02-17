@@ -10,18 +10,30 @@
 
     /** Defaults */
     var elementsAmount = 200,
-        currentTheme = zub.wallThemes['default'];
+        currentTheme = $.extend({}, zub.wallThemes['default']);
 
     /**
      * Generates a random wall of images and patterns.
-     * @param {dom-element} Wall element to "wallify".
-     * @param {function} A template function.
+     * @param {dom-element} el – Wall element to "wallify".
+     * @param {function} template – A template function.
+     * @param {function} theme – A theme object to generate elements from.
      */
     function initWall (el, template, theme) {
         var output = '<div>';
 
         for (var i = 0; i < elementsAmount; i++) {
-            output += template(theme);
+            var image           = _.sample(theme.images),
+                backgroundColor = _.sample(theme.colors),
+                patternColor    = _.sample(_.without(theme.colors, backgroundColor));
+
+            console.log(image, backgroundColor, patternColor);
+
+            output += template({
+                hasImage: !!Math.round(Math.random()), // results in a ~50/50 boolean
+                image: image,
+                bgColor: backgroundColor,
+                patternColor: patternColor
+            });
         }
 
         output += '</div>'
@@ -51,7 +63,11 @@
         $('[data-js-wall-theme]').click(function (e) {
             var themeName = $(this).attr('data-js-wall-theme');
             if (themeName && zub.wallThemes[themeName]) {
-                currentTheme = zub.wallThemes[themeName];
+                currentTheme = $.extend(
+                                        {},
+                                        zub.wallThemes['default'],
+                                        zub.wallThemes[themeName]
+                                );
                 initWall($wall, template, currentTheme);
             }
         });

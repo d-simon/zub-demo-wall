@@ -12,7 +12,12 @@
 </div>
 
 <script id="poster-template" type="text/template">
-    <div style="color: {{= _.sample(colors) }}">Test</div>
+    <div>
+        <span style="color: {{= patternColor }}">Pattern</span>
+        &#8212;
+        <span style="color: {{= bgColor }}">Background</span>
+        {{= hasImage ? 'Image.' : 'No image.'}}
+    </div>
 </script>
 <script type="text/javascript">
     var zub = zub || {};
@@ -21,10 +26,17 @@
             colors: [
                 '#00FF00',
                 '#FF0000',
-                '#0000FF'
+                '#0000FF',
+                '#FFFF00',
+                '#FF00FF',
+                '#00FFFF',
             ],
-            patterns: [],
-            images: [],
+            patterns: [
+                'media/patterns/sample-pattern.svg'
+            ],
+            images: [
+                'media/img/sample-image.jpg'
+            ],
         }
     };
 </script>
