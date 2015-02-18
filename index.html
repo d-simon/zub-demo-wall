@@ -6,44 +6,43 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<nav class="theme-nav" data-js-theme-nav>
 
-</nav>
-<div class="wall" data-js-wall>
-</div>
+    <nav class="theme-nav" data-js-theme-nav></nav>
+    <div class="wall" data-js-wall></div>
 
-<script id="poster-template" type="text/template">
-    <div class="poster" style="background: {{= bgColor }}">
+    <script id="poster-template" type="text/template">
+        <div class="poster" style="background: {{= bgColor }}">
 
-        <h3 class="poster__title" style="color: {{= patternColor }}">Pattern</h3>
-        {{ if (hasImage) { }}
-        <img src="{{= image }}" class="poster__image" alt="">
-        {{ } }}
-    </div>
-</script>
-<script type="text/javascript">
-    var zub = zub || {};
-    zub.wallThemes = {
-        'default': {
-            colors: [
-                '#00FF00',
-                '#FF0000',
-                '#0000FF',
-                '#FFFF00',
-                '#FF00FF',
-                '#00FFFF',
-            ],
-            patterns: [
-                'media/patterns/sample-pattern.svg'
-            ],
-            images: [
-                'media/img/sample-image.jpg'
-            ],
-        }
-    };
-</script>
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/lodash/lodash.js"></script>
-<script src="wall-generator.js"></script>
+            <h3 class="poster__title">Pattern</h3>
+            <img src="{{= pattern }}" data-js-svg-fill="{{= patternColor }}" class="poster__pattern" alt="">
+            {{ if (hasImage) { }}
+            <img src="{{= image }}" class="poster__image" alt="">
+            {{ } }}
+        </div>
+    </script>
+    <script type="text/javascript">
+        var zub = zub || {};
+        zub.wallThemes = {
+            'default': {
+                colors: [
+                    '#00FF00',
+                    '#FF0000',
+                    '#0000FF',
+                    '#FFFF00',
+                    '#FF00FF',
+                    '#00FFFF',
+                ],
+                patterns: [
+                    'media/patterns/sample-pattern.svg'
+                ],
+                images: [
+                    'media/img/sample-image.jpg'
+                ],
+            }
+        };
+    </script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="wall-generator.js"></script>
 </body>
 </html>

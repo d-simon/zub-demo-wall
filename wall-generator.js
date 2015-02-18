@@ -9,7 +9,7 @@
 
 
     /** Defaults */
-    var elementsAmount = 200,
+    var elementsAmount = 40,
         currentTheme = $.extend({}, zub.wallThemes['default']);
 
     /**
@@ -23,12 +23,14 @@
 
         for (var i = 0; i < elementsAmount; i++) {
             var image           = _.sample(theme.images),
+                pattern         = _.sample(theme.patterns),
                 backgroundColor = _.sample(theme.colors),
                 patternColor    = _.sample(_.without(theme.colors, backgroundColor));
 
             output += template({
                 hasImage: !!Math.round(Math.random()), // results in a ~50/50 boolean
                 image: image,
+                pattern: pattern,
                 bgColor: backgroundColor,
                 patternColor: patternColor
             });
@@ -36,6 +38,49 @@
 
         output += '</div>'
         $(el).empty().append(output);
+         /*
+         * Replace all SVG images with inline SVG
+         */
+        $('img[src$=".svg"]').each(function(){
+            var $img = $(this),
+                imgID = $img.attr('id'),
+                imgStyle = $img.attr('style'),
+                imgClass = $img.attr('class'),
+                imgURL = $img.attr('src'),
+                svgColor = $img.attr('data-js-svg-fill'),
+                html;
+
+            $.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = $(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                $svg = $svg.attr('style', imgStyle);
+
+                if (svgColor) {
+                    html = $svg[0].innerHTML;
+                    html = html.replace(/#000000/g, svgColor);
+                    $svg.html(html);
+                    console.log(html);
+                }
+
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+        });
     }
 
     /**
