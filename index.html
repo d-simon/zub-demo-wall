@@ -14,7 +14,7 @@
         <div class="poster" style="background: {{= bgColor }}">
 
             <h3 class="poster__title">Pattern</h3>
-            <img src="{{= pattern }}" data-js-svg-fill="{{= patternColor }}" class="poster__pattern" alt="">
+            {{ if (pattern) { }}<img src="{{= pattern }}" data-js-svg-fill="{{= patternColor }}" style="fill: {{= patternColor}}" class="poster__pattern" alt="">{{ } }}
             {{ if (hasImage) { }}
             <img src="{{= image }}" class="poster__image" alt="">
             {{ } }}
@@ -22,6 +22,7 @@
     </script>
     <script type="text/javascript">
         var zub = zub || {};
+        zub.elementsAmount = 200;
         zub.wallThemes = {
             'default': {
                 colors: [
@@ -33,7 +34,25 @@
                     '#00FFFF',
                 ],
                 patterns: [
-                    'media/patterns/sample-pattern.svg'
+                    // 'media/patterns/sample-pattern.svg',
+                    'media/patterns/Patterns_v003_1.svg',
+                    'media/patterns/Patterns_v003_2.svg',
+                    'media/patterns/Patterns_v003_3.svg',
+                    'media/patterns/Patterns_v003_4.svg',
+                    'media/patterns/Patterns_v003_5.svg',
+                    'media/patterns/Patterns_v003_6.svg',
+                    'media/patterns/Patterns_v003_7.svg',
+                    // 'media/patterns/Patterns_v003_8.svg',
+                    // 'media/patterns/Patterns_v003_9.svg',
+                    'media/patterns/Patterns_v003_10.svg',
+                    'media/patterns/Patterns_v003_11.svg',
+                    'media/patterns/Patterns_v003_12.svg',
+                    'media/patterns/Patterns_v003_13.svg',
+                    'media/patterns/Patterns_v003_14.svg',
+                    'media/patterns/Patterns_v003_15.svg',
+                    'media/patterns/Patterns_v003_16.svg',
+                    'media/patterns/Patterns_v003_17.svg',
+                    ''
                 ],
                 images: [
                     'media/img/sample-image.jpg'

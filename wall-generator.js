@@ -9,7 +9,7 @@
 
 
     /** Defaults */
-    var elementsAmount = 80,
+    var elementsAmount = zub.elementsAmount || 80,
         currentTheme = $.extend({}, zub.wallThemes['default']);
 
     /**
@@ -77,10 +77,9 @@
                  */
                 if (svgColor) {
                     html = $svg[0].innerHTML;
-                    html = html.replace(/#000000/g, svgColor);
+                    html = html.replace(/#([a-fA-F0-9]){3}(([a-fA-F0-9]){3})?\b/g, svgColor);
                     $svg.html(html);
                 }
-
 
                 // Remove any invalid XML tags as per http://validator.w3.org
                 $svg = $svg.removeAttr('xmlns:a');
