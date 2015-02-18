@@ -3,7 +3,7 @@ img {
 
 body {
   font-family: "Graphik", "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 600; }
+  font-weight: 500; }
 
 .theme-nav {
   padding: 10px; }
@@ -70,7 +70,7 @@ body {
     width: 25%;
     padding-bottom: 25%; }
     .poster__title {
-      font-size: 1.4em; } }
+      font-size: 1.5em; } }
 @media (max-width: 640px) {
   .poster {
     width: 33%;
@@ -87,8 +87,7 @@ body {
   right: 10%;
   margin: 0;
   padding: 5px;
-  font-size: 2.4em;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.015em;
   text-align: left;
   line-height: 1;
@@ -98,9 +97,13 @@ body {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
-  text-shadow: #444 3px 3px 0px;
+  text-shadow: #666 3px 3px 0px;
   color: white; }
 .wall--style-offset .poster__span {
-  background: #222; }
+  background: #111; }
+
+@media (max-width: 1300px) {
+  .wall--style-offset .poster__title {
+    text-shadow: #666 2px 2px 0px; } }
 
 /*# sourceMappingURL=main.css.map */
