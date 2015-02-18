@@ -38,9 +38,15 @@
 
         output += '</div>'
         $(el).empty().append(output);
-         /*
-         * Replace all SVG images with inline SVG
-         */
+
+        replaceSVGs();
+    }
+
+
+    /**
+     * Replace all SVG images with inline SVG
+     */
+    function replaceSVGs () {
         $('img[src$=".svg"]').each(function(){
             var $img = $(this),
                 imgID = $img.attr('id'),
@@ -65,11 +71,13 @@
 
                 $svg = $svg.attr('style', imgStyle);
 
+                /**
+                 * Replace all colors (black) inside the svg
+                 */
                 if (svgColor) {
                     html = $svg[0].innerHTML;
                     html = html.replace(/#000000/g, svgColor);
                     $svg.html(html);
-                    console.log(html);
                 }
 
 
@@ -82,6 +90,7 @@
             }, 'xml');
         });
     }
+
 
     /**
      * Ready Event / Setup
