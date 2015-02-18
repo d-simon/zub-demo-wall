@@ -2,21 +2,23 @@
 <html>
 <head>
     <title>Z&uuml;rich unbezahlbar – Demo Wall</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/pure/pure-min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<nav class="navigation" data-js-theme-nav>
+<nav class="theme-nav" data-js-theme-nav>
 
 </nav>
 <div class="wall" data-js-wall>
 </div>
 
 <script id="poster-template" type="text/template">
-    <div>
-        <span style="color: {{= patternColor }}">Pattern</span>
-        &#8212;
-        <span style="color: {{= bgColor }}">Background</span>
-        {{= hasImage ? 'Image.' : 'No image.'}}
+    <div class="poster" style="background: {{= bgColor }}">
+
+        <h3 class="poster__title" style="color: {{= patternColor }}">Pattern</h3>
+        {{ if (hasImage) { }}
+        <img src="{{= image }}" class="poster__image" alt="">
+        {{ } }}
     </div>
 </script>
 <script type="text/javascript">

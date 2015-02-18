@@ -26,8 +26,6 @@
                 backgroundColor = _.sample(theme.colors),
                 patternColor    = _.sample(_.without(theme.colors, backgroundColor));
 
-            console.log(image, backgroundColor, patternColor);
-
             output += template({
                 hasImage: !!Math.round(Math.random()), // results in a ~50/50 boolean
                 image: image,
@@ -56,7 +54,7 @@
         /** Generate theme navigation */
         _.forEach(zub.wallThemes, function (theme, name) {
             $('[data-js-theme-nav]')
-                .append('<button type="button" class="theme-nav-button" data-js-wall-theme="'+name+'">'+name+'</button>');
+                .append('<button type="button" class="theme-nav__button pure-button" data-js-wall-theme="'+name+'">'+name+'</button>');
         });
 
         /** Bind theme navigation */
