@@ -92,6 +92,18 @@
         });
     }
 
+    /**
+     * Get theme by name
+     * @param {string} themeName – Name of the theme.
+     * @returns {object} – Returns theme.
+     */
+    function getTheme (themeName) {
+        return $.extend(
+                    {},
+                    zub.wallThemes['default'],
+                    zub.wallThemes[themeName]
+                );
+    }
 
     /**
      * Ready Event / Setup
@@ -102,6 +114,12 @@
             templateStr = $template.html() || 'No Template found!',
             template = _.template(templateStr),
             $wall = $('[data-js-wall]');
+
+        /** Set theme from hash if available */
+        var hash = window.location.hash.replace('#', '');
+        if (hash && zub.wallThemes[hash]) {
+            currentTheme = getTheme(hash);
+        }
 
         /** Generate inital wall */
         initWall($wall, template, currentTheme, elementsAmount);
@@ -116,11 +134,8 @@
         $('[data-js-wall-theme]').click(function (e) {
             var themeName = $(this).attr('data-js-wall-theme');
             if (themeName && zub.wallThemes[themeName]) {
-                currentTheme = $.extend(
-                                        {},
-                                        zub.wallThemes['default'],
-                                        zub.wallThemes[themeName]
-                                );
+                window.location.hash = themeName;
+                currentTheme = getTheme(themeName);
                 initWall($wall, template, currentTheme, elementsAmount);
             }
         });
