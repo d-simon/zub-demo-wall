@@ -1,6 +1,10 @@
 img
     max-width: 100%
 
+body
+    font-family: "Graphik", "Helvetica Neue", Helvetica, sans-serif
+    font-weight: 600
+
 
 .theme-nav
     padding: 10px
@@ -16,7 +20,7 @@ img
     height: 0
     padding-bottom: 20%
     // text-align: center
-    overflow: hidden
+    // overflow: hidden
     cursor: pointer
 
     &::before
@@ -35,10 +39,6 @@ img
         -ms-transition: opacity 0.2s ease-out
         -o-transition: opacity 0.2s ease-out
         transition: opacity 0.2s ease-out
-    &:hover
-        &::before
-            opacity: 1
-
 
     &__image
         width: 100%
@@ -59,12 +59,24 @@ img
         right: 10%
         // margin-top: -0.5em
         margin: 0
-        padding: 0
-        color: white
-        font-size: 2.2em
+        padding: 5px
+        font-size: 2.4em
+        font-weight: 600
         letter-spacing: -0.015em
         text-align: left
-        // text-shadow: rgba(0,0,0,0.3) 0 0 6px
+
+        -ms-word-break: break-all
+        word-break: break-all
+        word-break: break-word // Non standard for webkit
+        -webkit-hyphens: auto
+        -moz-hyphens: auto
+        hyphens: auto
+
+        color: white
+
+    &__span
+        // padding: 2px
+
 
 @media (max-width: 1300px)
     .poster
@@ -75,7 +87,6 @@ img
     .poster
         width: 25%
         padding-bottom: 25%
-
         &__title
             font-size: 1.4em
 
@@ -89,4 +100,42 @@ img
         width: 50%
         padding-bottom: 50%
 
+
+
+.wall
+    &--style-offset
+        .poster
+
+            &__title
+                position: absolute
+                z-index: 2
+                // top: 50%
+                top: -5%
+                left: 5%
+                right: 10%
+                // margin-top: -0.5em
+                margin: 0
+                padding: 5px
+                font-size: 2.4em
+                font-weight: 600
+                letter-spacing: -0.015em
+                text-align: left
+                line-height: 1.0
+
+                -ms-word-break: break-all
+                word-break: break-all
+                word-break: break-word // Non standard for webkit
+                -webkit-hyphens: auto
+                -moz-hyphens: auto
+                hyphens: auto
+
+
+                // text-shadow: rgba(0,0,0,0.3) 0 0 6px
+                text-shadow: #444 3px 3px 0px
+                // background: #222
+                color: white
+
+            &__span
+                // padding: 2px
+                background: #222
 

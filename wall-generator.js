@@ -27,11 +27,14 @@
             var image           = _.sample(theme.images),
                 pattern         = _.sample(theme.patterns),
                 backgroundColor = _.sample(theme.colors),
-                patternColor    = _.sample(_.without(theme.colors, backgroundColor));
+                patternColor    = _.sample(_.without(theme.colors, backgroundColor)),
+                title           = _.sample(theme.titles) || faker.company.catchPhrase();
+                console.log(_.sample(theme.titles));
+            _.remove(theme.titles, title);
 
             output += template({
                 hasImage: !!Math.round(Math.random()), // results in a ~50/50 boolean
-                title: faker.company.catchPhrase(),
+                title: title,
                 image: image,
                 pattern: pattern,
                 bgColor: backgroundColor,

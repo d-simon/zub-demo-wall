@@ -1,6 +1,10 @@
 img {
   max-width: 100%; }
 
+body {
+  font-family: "Graphik", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 600; }
+
 .theme-nav {
   padding: 10px; }
   .theme-nav__button {
@@ -13,7 +17,6 @@ img {
   width: 20%;
   height: 0;
   padding-bottom: 20%;
-  overflow: hidden;
   cursor: pointer; }
   .poster::before {
     content: "";
@@ -31,8 +34,6 @@ img {
     -ms-transition: opacity 0.2s ease-out;
     -o-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out; }
-  .poster:hover::before {
-    opacity: 1; }
   .poster__image {
     width: 100%; }
   .poster__pattern {
@@ -48,11 +49,18 @@ img {
     left: 10%;
     right: 10%;
     margin: 0;
-    padding: 0;
-    color: white;
-    font-size: 2.2em;
+    padding: 5px;
+    font-size: 2.4em;
+    font-weight: 600;
     letter-spacing: -0.015em;
-    text-align: left; }
+    text-align: left;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    color: white; }
 
 @media (max-width: 1300px) {
   .poster__title {
@@ -71,5 +79,28 @@ img {
   .poster {
     width: 50%;
     padding-bottom: 50%; } }
+.wall--style-offset .poster__title {
+  position: absolute;
+  z-index: 2;
+  top: -5%;
+  left: 5%;
+  right: 10%;
+  margin: 0;
+  padding: 5px;
+  font-size: 2.4em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-align: left;
+  line-height: 1;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  text-shadow: #444 3px 3px 0px;
+  color: white; }
+.wall--style-offset .poster__span {
+  background: #222; }
 
 /*# sourceMappingURL=main.css.map */
