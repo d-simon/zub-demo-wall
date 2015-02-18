@@ -9,19 +9,20 @@
 
 
     /** Defaults */
-    var elementsAmount = 40,
+    var elementsAmount = 80,
         currentTheme = $.extend({}, zub.wallThemes['default']);
 
     /**
      * Generates a random wall of images and patterns.
      * @param {dom-element} el – Wall element to "wallify".
      * @param {function} template – A template function.
-     * @param {function} theme – A theme object to generate elements from.
+     * @param {object} theme – A theme object to generate elements from.
+     * @param {integer} [elementsAmount] – Number of elements to render.
      */
-    function initWall (el, template, theme) {
+    function initWall (el, template, theme, elementsAmount) {
         var output = '<div>';
 
-        for (var i = 0; i < elementsAmount; i++) {
+        for (var i = 0; i < (elementsAmount||40); i++) {
             var image           = _.sample(theme.images),
                 pattern         = _.sample(theme.patterns),
                 backgroundColor = _.sample(theme.colors),
@@ -103,7 +104,7 @@
             $wall = $('[data-js-wall]');
 
         /** Generate inital wall */
-        initWall($wall, template, currentTheme);
+        initWall($wall, template, currentTheme, elementsAmount);
 
         /** Generate theme navigation */
         _.forEach(zub.wallThemes, function (theme, name) {
@@ -120,7 +121,7 @@
                                         zub.wallThemes['default'],
                                         zub.wallThemes[themeName]
                                 );
-                initWall($wall, template, currentTheme);
+                initWall($wall, template, currentTheme, elementsAmount);
             }
         });
 
