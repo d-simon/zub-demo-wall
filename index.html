@@ -13,7 +13,7 @@
     <script id="poster-template" type="text/template">
         <div class="poster" style="background: {{= bgColor }}">
 
-            <h3 class="poster__title">Pattern</h3>
+            <h3 class="poster__title">{{= title||'Title'}}</h3>
             {{ if (pattern) { }}<img src="{{= pattern }}" data-js-svg-fill="{{= patternColor }}" style="fill: {{= patternColor}}" class="poster__pattern" alt="">{{ } }}
             {{ if (hasImage) { }}
             <img src="{{= image }}" class="poster__image" alt="">
@@ -52,11 +52,12 @@
                     'media/patterns/Patterns_v003_15.svg',
                     'media/patterns/Patterns_v003_16.svg',
                     'media/patterns/Patterns_v003_17.svg',
+                    '',
                     ''
                 ],
                 images: [
                     'media/img/sample-image.jpg'
-                ],
+                ]
             },
             'Dominiks_Final': {
                 colors: [
@@ -96,6 +97,7 @@
         };
     </script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/Faker/build/build/faker.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="wall-generator.js"></script>
 </body>

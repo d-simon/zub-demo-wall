@@ -13,8 +13,26 @@ img {
   width: 20%;
   height: 0;
   padding-bottom: 20%;
-  text-align: center;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: pointer; }
+  .poster::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: #222;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -ms-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out; }
+  .poster:hover::before {
+    opacity: 1; }
   .poster__image {
     width: 100%; }
   .poster__pattern {
@@ -25,11 +43,33 @@ img {
     height: 100%; }
   .poster__title {
     position: absolute;
-    z-index: 1;
-    top: 50%;
-    right: 0;
-    left: 0;
-    margin-top: -0.5em;
-    color: white; }
+    z-index: 2;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 2.2em;
+    letter-spacing: -0.015em;
+    text-align: left; }
+
+@media (max-width: 1300px) {
+  .poster__title {
+    font-size: 1.8em; } }
+@media (max-width: 960px) {
+  .poster {
+    width: 25%;
+    padding-bottom: 25%; }
+    .poster__title {
+      font-size: 1.4em; } }
+@media (max-width: 640px) {
+  .poster {
+    width: 33%;
+    padding-bottom: 33%; } }
+@media (max-width: 480px) {
+  .poster {
+    width: 50%;
+    padding-bottom: 50%; } }
 
 /*# sourceMappingURL=main.css.map */

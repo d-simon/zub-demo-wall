@@ -7,6 +7,7 @@
         evaluate: /\{\{(.+?)\}\}/g,
     };
 
+    faker.locale = 'de';
 
     /** Defaults */
     var elementsAmount = zub.elementsAmount || 80,
@@ -30,6 +31,7 @@
 
             output += template({
                 hasImage: !!Math.round(Math.random()), // results in a ~50/50 boolean
+                title: faker.company.catchPhrase(),
                 image: image,
                 pattern: pattern,
                 bgColor: backgroundColor,
