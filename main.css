@@ -5,9 +5,11 @@ body {
   font-family: "Graphik", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 500; }
 
-.theme-nav {
+.theme-nav,
+.style-nav {
   padding: 10px; }
-  .theme-nav__button {
+  .theme-nav__button,
+  .style-nav__button {
     font-size: 80%;
     margin: 4px; }
 
@@ -51,7 +53,7 @@ body {
     margin: 0;
     padding: 5px;
     font-size: 2.4em;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -0.015em;
     text-align: left;
     -ms-word-break: break-all;
@@ -60,6 +62,7 @@ body {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
+    text-shadow: rgba(0, 0, 0, 0.4) 0 0 7px, #444 3px 3px 0px, #222 7px 5px;
     color: white; }
 
 @media (max-width: 1300px) {
@@ -79,14 +82,14 @@ body {
   .poster {
     width: 50%;
     padding-bottom: 50%; } }
-.wall--style-offset .poster__title {
+.wall--style-invert .poster__title, .wall--style-invert-offset .poster__title {
   position: absolute;
   z-index: 2;
-  top: -5%;
-  left: 5%;
+  top: 0;
+  left: 0;
   right: 10%;
   margin: 0;
-  padding: 5px;
+  padding: 20px;
   font-weight: 500;
   letter-spacing: -0.015em;
   text-align: left;
@@ -97,13 +100,14 @@ body {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
-  text-shadow: #666 3px 3px 0px;
   color: white; }
-.wall--style-offset .poster__span {
-  background: #111; }
-
-@media (max-width: 1300px) {
-  .wall--style-offset .poster__title {
-    text-shadow: #666 2px 2px 0px; } }
+.wall--style-invert .poster__span, .wall--style-invert-offset .poster__span {
+  background: #222; }
+.wall--style-invert-offset .poster__title {
+  top: -5%;
+  left: 5%;
+  padding: 5px; }
+.wall--none .poster__title {
+  text-shadow: none; }
 
 /*# sourceMappingURL=main.css.map */

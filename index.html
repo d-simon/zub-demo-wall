@@ -8,7 +8,8 @@
 <body>
 
     <nav class="theme-nav" data-js-theme-nav></nav>
-    <div class="wall wall--style-offset" data-js-wall></div>
+    <nav class="style-nav" data-js-style-nav></nav>
+    <div class="wall" data-js-wall></div>
 
     <script id="poster-template" type="text/template">
         <div class="poster" style="background: {{= bgColor }}">
@@ -24,6 +25,41 @@
         var zub = zub || {};
         zub.elementsAmount = 200;
         zub.wallThemes = {
+            'Dominiks_Final': {
+                colors: [
+                    '#E74C16',
+                    '#E1C806',
+                    '#9BC44B',
+                    '#0F9639',
+                    '#0198A7',
+                    '#61A2D8',
+                    '#344C9A',
+                    '#A4388D',
+                    '#E575AB',
+                    '#E3171E'
+                ]
+            },
+            'Noras_Latest': {
+                colors: [
+                    '#FF005C',
+                    '#FFF924',
+                    '#90FF00',
+                    '#00E7FF',
+                    '#8582F9'
+                ]
+            },
+            'Daves_Constructed': {
+                colors: [
+                    '#FFE906',
+                    '#FF8400',
+                    '#FF0732',
+                    '#721EE8',
+                    '#0B9EFF',
+                    '#2FE800',
+                    '#00FFB7',
+                    '#0066E8'
+                ]
+            },
             'default': {
                 colors: [
                     '#00FF00',
@@ -186,53 +222,6 @@
                     'Telefon 147',
                     'Schreibdienst Stadt Zürich'
                 ]
-            },
-            'Dominiks_Final': {
-                colors: [
-                    '#E74C16',
-                    '#E1C806',
-                    '#9BC44B',
-                    '#0F9639',
-                    '#0198A7',
-                    '#61A2D8',
-                    '#344C9A',
-                    '#A4388D',
-                    '#E575AB',
-                    '#E3171E'
-                ]
-            },
-            'Noras_Latest': {
-                colors: [
-                    '#FF005C',
-                    '#FFF924',
-                    '#90FF00',
-                    '#00E7FF',
-                    '#8582F9'
-                ]
-            },
-            'Daves_Constructed': {
-                colors: [
-                    '#FFE906',
-                    '#FF8400',
-                    '#FF0732',
-                    '#721EE8',
-                    '#0B9EFF',
-                    '#2FE800',
-                    '#00FFB7',
-                    '#0066E8'
-                ]
-            },
-            'Daves_Constructed_v2': {
-                colors: [
-                    '#FFE906',
-                    '#FF8400',
-                    '#FF0732',
-                    '#721EE8',
-                    '#0B9EFF',
-                    '#2FE800',
-                    '#00FFB7',
-                    '#0066E8'
-                ]
             }
         };
     </script>
@@ -240,5 +229,7 @@
     <script src="bower_components/Faker/build/build/faker.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="wall-generator.js"></script>
+    <script src="switch-styles.js"></script>
+    <!-- <script src="mouse-hover.js"></script> -->
 </body>
 </html>

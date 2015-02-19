@@ -6,7 +6,8 @@ body
     font-weight: 500
 
 
-.theme-nav
+.theme-nav,
+.style-nav
     padding: 10px
     &__button
         font-size: 80%
@@ -61,7 +62,7 @@ body
         margin: 0
         padding: 5px
         font-size: 2.4em
-        font-weight: 600
+        font-weight: 500
         letter-spacing: -0.015em
         text-align: left
 
@@ -72,6 +73,7 @@ body
         -moz-hyphens: auto
         hyphens: auto
 
+        text-shadow: rgba(0,0,0,0.4) 0 0 7px, #444 3px 3px 0px, #222 7px 5px
         color: white
 
     &__span
@@ -101,23 +103,23 @@ body
 
 
 .wall
-    &--style-offset
+    &--style-invert
         .poster
 
             &__title
                 position: absolute
                 z-index: 2
                 // top: 50%
-                top: -5%
-                left: 5%
+                top: 0
+                left: 0
                 right: 10%
                 // margin-top: -0.5em
                 margin: 0
-                padding: 5px
+                padding: 20px
                 font-weight: 500
                 letter-spacing: -0.015em
                 text-align: left
-                line-height: 1.0
+                line-height: 1
 
                 -ms-word-break: break-all
                 word-break: break-all
@@ -128,17 +130,24 @@ body
 
 
                 // text-shadow: rgba(0,0,0,0.3) 0 0 6px
-                text-shadow: #666 3px 3px 0px
+                // text-shadow: #666 3px 3px 0px
                 // background: #222
                 color: white
 
             &__span
                 // padding: 2px
-                background: #111
+                background: #222
 
-@media (max-width: 1300px)
-    .wall
-        &--style-offset
-            .poster
-                &__title
-                    text-shadow: #666 2px 2px 0px
+
+    &--style-invert-offset
+        @extend .wall--style-invert
+        .poster
+            &__title
+                top: -5%
+                left: 5%
+                padding: 5px
+
+    &--none
+        .poster
+            &__title
+                text-shadow: none

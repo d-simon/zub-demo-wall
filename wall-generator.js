@@ -33,7 +33,7 @@
             _.remove(theme.titles, title);
 
             output += template({
-                hasImage: !!Math.round(Math.random()), // results in a ~50/50 boolean
+                hasImage: !!(Math.random() > 0.33), // results in a ~50/50 boolean
                 title: title,
                 image: image,
                 pattern: pattern,
