@@ -9,17 +9,14 @@
             element: '.wall',
             modifierClass: 'wall--default'
         },
+        'upscale': {
+            modifierClass: 'wall--style-upscale'
+        },
         'invert': {
             modifierClass: 'wall--style-invert'
         },
-        'invert-offset': {
-            modifierClass: 'wall--style-invert-offset'
-        },
         'nora': {
             modifierClass: 'wall--style-nora'
-        },
-        'upscale': {
-            modifierClass: 'wall--style-upscale'
         }
     };
 
