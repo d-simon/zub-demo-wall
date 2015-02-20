@@ -26,6 +26,7 @@
         for (var i = 0; i < (elementsAmount||40); i++) {
             var image           = _.sample(theme.images),
                 pattern         = _.sample(theme.patterns),
+                patternName     = pattern.replace(/\//g,'').replace(/\./g,''),
                 backgroundColor = _.sample(theme.colors),
                 patternColor    = _.sample(_.without(theme.colors, backgroundColor)),
                 title           = _.sample(theme.titles) || faker.company.catchPhrase();
@@ -37,6 +38,7 @@
                 title: title,
                 image: image,
                 pattern: pattern,
+                patternName: patternName,
                 bgColor: backgroundColor,
                 patternColor: patternColor
             });

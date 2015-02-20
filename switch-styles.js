@@ -17,6 +17,9 @@
         },
         'nora': {
             modifierClass: 'wall--style-nora'
+        },
+        'upscale': {
+            modifierClass: 'wall--style-upscale'
         }
     };
 

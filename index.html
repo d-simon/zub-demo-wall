@@ -18,7 +18,7 @@
         <div class="poster" style="background: {{= bgColor }}">
 
             <h3 class="poster__title"><span class="poster__span">{{= title||'Title'}}</span></h3>
-            {{ if (pattern) { }}<img src="{{= pattern }}" data-js-svg-fill="{{= patternColor }}" style="fill: {{= patternColor}}" class="poster__pattern" alt="">{{ } }}
+            {{ if (pattern) { }}<img src="{{= pattern }}" data-js-svg-fill="{{= patternColor }}" style="fill: {{= patternColor}}" class="poster__pattern poster__pattern--{{=patternName}}" alt="">{{ } }}
             {{ if (hasImage) { }}
             <img src="{{= image }}" class="poster__image" alt="">
             {{ } }}
