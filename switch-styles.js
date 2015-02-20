@@ -28,7 +28,7 @@
     }
 
     $(document).ready(function () {
-        $('[data-js-style-nav').each(function () {
+        $('[data-js-style-nav]').each(function () {
             var $this = $(this);
 
             var output = '<div>';
