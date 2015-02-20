@@ -14,6 +14,9 @@
         },
         'invert-offset': {
             modifierClass: 'wall--style-invert-offset'
+        },
+        'nora': {
+            modifierClass: 'wall--style-nora'
         }
     };
 

@@ -50,6 +50,7 @@ body
         left: 0
         width: 100%
         height: 100%
+        opacity: 0.8
 
     &__title
         position: absolute
@@ -150,4 +151,13 @@ body
     &--none
         .poster
             &__title
+                text-shadow: none
+
+    &--style-nora
+        @extend .wall--style-invert
+        .poster
+            &__title
+                top: -5%
+                left: 5%
+                padding: 5px
                 text-shadow: none

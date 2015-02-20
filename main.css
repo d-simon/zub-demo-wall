@@ -43,7 +43,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    opacity: 0.8; }
   .poster__title {
     position: absolute;
     z-index: 2;
@@ -82,7 +83,7 @@ body {
   .poster {
     width: 50%;
     padding-bottom: 50%; } }
-.wall--style-invert .poster__title, .wall--style-invert-offset .poster__title {
+.wall--style-invert .poster__title, .wall--style-invert-offset .poster__title, .wall--style-nora .poster__title {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -101,13 +102,18 @@ body {
   -moz-hyphens: auto;
   hyphens: auto;
   color: white; }
-.wall--style-invert .poster__span, .wall--style-invert-offset .poster__span {
+.wall--style-invert .poster__span, .wall--style-invert-offset .poster__span, .wall--style-nora .poster__span {
   background: #222; }
 .wall--style-invert-offset .poster__title {
   top: -5%;
   left: 5%;
   padding: 5px; }
 .wall--none .poster__title {
+  text-shadow: none; }
+.wall--style-nora .poster__title {
+  top: -5%;
+  left: 5%;
+  padding: 5px;
   text-shadow: none; }
 
 /*# sourceMappingURL=main.css.map */
