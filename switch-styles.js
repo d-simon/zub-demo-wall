@@ -10,13 +10,25 @@
             modifierClass: 'wall--default'
         },
         'upscale': {
-            modifierClass: 'wall--style-upscale'
+            modifierClass: 'wall--upscale'
         },
         'invert': {
-            modifierClass: 'wall--style-invert'
+            modifierClass: 'wall--invert'
         },
         'nora': {
-            modifierClass: 'wall--style-nora'
+            modifierClass: 'wall--nora'
+        },
+        'transparent': {
+            modifierClass: 'wall--transparent'
+        },
+        'upscale/transparent': {
+            modifierClass: 'wall--upscale wall--transparent'
+        },
+        'upscale/invert': {
+            modifierClass: 'wall--upscale wall--invert'
+        },
+        'upscale/transparent/invert': {
+            modifierClass: 'wall--upscale wall--transparent wall--invert'
         }
     };
 

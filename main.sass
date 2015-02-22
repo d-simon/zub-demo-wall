@@ -70,31 +70,38 @@ body
         -moz-hyphens: auto
         hyphens: auto
 
-        text-shadow: rgba(0,0,0,0.4) 0 0 7px, #444 3px 3px 0px, #222 7px 5px
+        text-shadow: rgba(0,0,0,0.4) 0 0 7px, #222 1px 1px, #222 2px 2px, #222 3px 3px, #222 4px 4px, #222 5px 5px, #222 6px 6px, #222 7px 7px
         color: white
 
 @media (max-width: 1300px)
     .poster
-        &__title
-            font-size: 1.8em
-            text-shadow: rgba(0,0,0,0.4) 0 0 5px, #444 2px 2px 0px, #222 4px 3px
-
-@media (max-width: 960px)
-    .poster
         width: 25%
         padding-bottom: 25%
         &__title
-            font-size: 1.5em
+            font-size: 1.8em
+            text-shadow: rgba(0,0,0,0.4) 0 0 5px, #222 1px 1px, #222 2px 2px, #222 3px 3px, #222 4px 4px, #222 5px 5px
+
+@media (max-width: 960px)
+    .poster
+        width: 33.33%
+        padding-bottom: 33.33%
+        &__title
+            // font-size: 1.5em
 
 @media (max-width: 640px)
     .poster
-        width: 33%
-        padding-bottom: 33%
+        width: 33.33%
+        padding-bottom: 33.33%
 
 @media (max-width: 480px)
     .poster
         width: 50%
         padding-bottom: 50%
+
+@media (max-width: 320px)
+    .poster
+        width: 100%
+        padding-bottom: 100%
 
 
 .wall
@@ -105,7 +112,12 @@ body
                 text-shadow: none
 
 
-    &--style-upscale
+    &--transparent
+        .poster
+            &__pattern
+                opacity: 0.5
+
+    &--upscale
         .poster
             overflow: hidden
             &__pattern
@@ -125,8 +137,7 @@ body
                     width: 174%
                     height: 174%
 
-
-    &--style-invert
+    &--invert
         .poster
 
             &__title
@@ -139,11 +150,10 @@ body
             &__span
                 background: #222
 
-    &--style-nora
-        @extend .wall--style-invert
+    &--nora
+        @extend .wall--invert
         .poster
             &__title
                 top: -5%
                 left: 5%
                 padding: 5px
-                text-shadow: none
