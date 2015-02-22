@@ -12,6 +12,9 @@
         'upscale': {
             modifierClass: 'wall--upscale'
         },
+        'spaced': {
+            modifierClass: 'wall--spaced'
+        },
         'invert': {
             modifierClass: 'wall--invert'
         },
